@@ -7,5 +7,20 @@ exports.el = {
     dropdownHorarios:'.ng-dropdown-panel-items',
     btnConfirmar: '.btn > span' /*selecionar através de: contains('Confirmar')*/,
     urlLogada: 'http://hapclin.hapvida-hml.com.br/agenda'
+    
+}
+
+exports.login = {
+    "Médico da Familia":{
+        "username":"DBGODOI",
+        "password":"BERNARDI1"
+    },
+    "Viver Bem":{
+        "username":"LUMABP",
+        "password":"LUMA16490" 
+    },
+    "Sinta-se Bem":{
+
+    }
 
 }
