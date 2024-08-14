@@ -16,6 +16,7 @@ import LoginPage from '../login/index'
   it('Teste de Login com Senha inválida', () => {
     LoginPage.fillFormPasswordError();
     LoginPage.submit();
+    //Assert para validação
     cy.get('.error-title').should('be.visible');
   });
   it('Teste de Login com credenciais válidas', ()=>{
