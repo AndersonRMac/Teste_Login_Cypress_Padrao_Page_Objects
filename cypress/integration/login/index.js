@@ -1,4 +1,6 @@
 import { el, login } from "./elements";
+const { username, password } = login['Médico da Familia'];
+
 
 
 //AONDE DEIXO OS ESCRIPTS DE FUNÇÕES USADAS PARA TESTES
@@ -8,7 +10,7 @@ const LoginPage = {
     },
     fillFormPasswordError: ()=>{
     // Preenche o campo Login inválido
-    cy.get(el.login).type(login["Médico da Familia"].username);
+    cy.get(el.login).type(username);
     // Preenche o campo de Senha
     cy.get(el.password).type('Teste');
     },
@@ -16,14 +18,14 @@ const LoginPage = {
         // Preenche o campo Login inválido
         cy.get(el.login).type('Teste');
         // Preenche o campo de Senha
-        cy.get(el.password).type(login["Médico da Familia"].password);
+        cy.get(el.password).type(password);
     },
 
     fillForm: function (){
         // Preenche o campo de Login
-        cy.get(el.login).type(login["Médico da Familia"].username);
+        cy.get(el.login).type(username);
         // Preenche o campo de Senha
-        cy.get(el.password).type(login["Médico da Familia"].password);
+        cy.get(el.password).type(password);
     },
     submit: function(){
         //Clica em Entrar
