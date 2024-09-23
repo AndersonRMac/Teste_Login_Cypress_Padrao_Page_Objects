@@ -34,5 +34,12 @@ import LoginPage from "./index"
     cy.url().should('eq', el.urlLogada);    
 
   });
-  
+  it('Teste de Login: Valida link "Esqueceu a senha?',()=>{
+    LoginPage.clicaEsqueceuASenha();
+    cy.url().should('eq', el.esqueceuASenha); 
+  });
+  it('Teste de Login: Valida link "Perguntas Frequentes',()=>{
+    LoginPage.clicaPerguntasFrequentes();
+    cy.url().should('eq', el.perguntasFrequentes);
+  });  
  });

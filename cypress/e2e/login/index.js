@@ -39,6 +39,12 @@ const LoginPage = {
         cy.wait(3000);
         //Clique no botão confirmar
         cy.get(el.btnConfirmar).contains('Confirmar').click();
+    },
+    clicaEsqueceuASenha:()=>{
+        cy.get(el.esqueceuASenha).click();
+    },
+    clicaPerguntasFrequentes:()=>{
+        cy.get(el.perguntasFrequentes).click();
     }
 }
 export default LoginPage
