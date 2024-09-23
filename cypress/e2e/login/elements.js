@@ -9,7 +9,7 @@ exports.el = {
     urlLogada: 'http://hapclin.hapvida-hml.com.br/agenda',
     esqueceuASenhaUrl: 'http://10.1.17.32:8080/utilitarios/reset.faces',
     esqueceuASenha: '.btn-link forgot-password-link',
-    perguntasFrequentes: 'http://hapclin.hapvida-hml.com.br/faq',
+    perguntasFrequentes: '.btn btn-link-white',
     perguntasFrequentesUrl:'http://hapclin.hapvida-hml.com.br/faq'
 }
 
