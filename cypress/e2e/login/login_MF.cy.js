@@ -1,6 +1,6 @@
 ///<reference types = "Cypress"/>
 import { el } from "./elements";
-import LoginPage from './index'
+import LoginPage from "./index"
 
 
  describe('Teste Funcional de Login', () =>{

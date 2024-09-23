@@ -6,8 +6,11 @@ exports.el = {
     dropdownAgendas: '#agendas-select > .ng-select-container > .ng-arrow-wrapper',
     dropdownHorarios:'.ng-dropdown-panel-items',
     btnConfirmar: '.btn > span' /*selecionar através de: contains('Confirmar')*/,
-    urlLogada: 'http://hapclin.hapvida-hml.com.br/agenda'
-    
+    urlLogada: 'http://hapclin.hapvida-hml.com.br/agenda',
+    esqueceuASenhaUrl: 'http://10.1.17.32:8080/utilitarios/reset.faces',
+    esqueceuASenha: '.btn-link forgot-password-link',
+    perguntasFrequentes: 'http://hapclin.hapvida-hml.com.br/faq',
+    perguntasFrequentesUrl:'http://hapclin.hapvida-hml.com.br/faq'
 }
 
 export const login = {
