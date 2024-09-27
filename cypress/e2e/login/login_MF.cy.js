@@ -51,7 +51,7 @@ import LoginPage from "./index"
     
   }); 
   
-  it.only('Teste de Login: Valida link "Esqueceu a senha"', () =>{
+  it('Teste de Login: Valida link "Esqueceu a senha"', () =>{
     // Verifica se o href do link está correto
     cy.get(el.esqueceuASenha)
     .should('have.attr', 'href', el.esqueceuASenhaUrl)
