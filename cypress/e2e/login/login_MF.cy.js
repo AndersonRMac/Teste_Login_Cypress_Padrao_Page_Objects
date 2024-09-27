@@ -9,32 +9,32 @@ import LoginPage from "./index"
     LoginPage.go();
   });
 
-  it('Teste de Login: Credenciais de Login inválidas', () => {
+  it('LOGIN SIGA - CT01 - Credenciais de Login inválidas', () => {
     LoginPage.fillFormLoginError();
     LoginPage.submit();
     //Assert para validação
     cy.get('.error-title').should('be.visible');
   });
 
-  it('Teste de Login: Senha inválida', () => {
+  it('LOGIN SIGA - CT02 - Senha inválida', () => {
     LoginPage.fillFormPasswordError();
     LoginPage.submit();
     //Assert para validação
     cy.get('.error-title').should('be.visible');
   });
 
-  it('Teste de Login: Campos de Login e Senha vazios', () => {
+  it('LOGIN SIGA - CT03 - Campos de Login e Senha vazios', () => {
     cy.get(el.btnEnter).should('be.disabled');
   });
 
-  it('Teste de Login: Credenciais válidas', ()=>{
+  it('LOGIN SIGA - CT04 - Credenciais válidas', ()=>{
     LoginPage.fillForm();
     LoginPage.submit();
     LoginPage.fillSuspenseWindow();
     cy.url().should('eq', el.urlLogada);    
 
   });
-  it('Teste de Login: Valida link "Perguntas Frequentes"',()=>{
+  it('LOGIN SIGA - CT05 - Valida link "Perguntas Frequentes"',()=>{
 
   // Intercepta a chamada de abertura da nova aba antes de clicar no botão
   cy.window().then((win) => {
@@ -51,12 +51,18 @@ import LoginPage from "./index"
     
   }); 
   
-  it('Teste de Login: Valida link "Esqueceu a senha"', () =>{
+  it('LOGIN SIGA - CT06 - Valida link "Esqueceu a senha"', () =>{
     // Verifica se o href do link está correto
     cy.get(el.esqueceuASenha)
     .should('have.attr', 'href', el.esqueceuASenhaUrl)
     .click();
  });
+ it('LOGIN SIGA - CT07 - Valida login médico"', () =>{
+  
+});
+it('LOGIN SIGA - CT08 - Valida login enfermeiro"', () =>{
+  
+});
 });
 
 
