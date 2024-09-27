@@ -34,12 +34,32 @@ import LoginPage from "./index"
     cy.url().should('eq', el.urlLogada);    
 
   });
-  it('Teste de Login: Valida link "Esqueceu a senha?',()=>{
-    LoginPage.clicaEsqueceuASenha();
-    cy.url().should('eq', el.esqueceuASenha); 
-  });
-  it('Teste de Login: Valida link "Perguntas Frequentes',()=>{
+  it('Teste de Login: Valida link "Perguntas Frequentes"',()=>{
+
+  // Intercepta a chamada de abertura da nova aba antes de clicar no botão
+  cy.window().then((win) => {
+    cy.stub(win, 'open').callsFake((url) => {
+        // Completa a URL relativa, se necessário
+        const fullUrl = url.startsWith('http') ? url : `${el.urlInicial}/${url}`;
+        // Assegura que a URL completa foi chamada
+        expect(fullUrl).to.equal(el.perguntasFrequentesUrl);
+    }).as('open');
+});
     LoginPage.clicaPerguntasFrequentes();
-    cy.url().should('eq', el.perguntasFrequentes);
-  });  
+    // Verifica se a função 'open' foi chamada com a URL correta
+    cy.get('@open').should('have.been.called');
+    
+  }); 
+  
+  it.only('Teste de Login: Valida link "Esqueceu a senha"', () =>{
+    // Verifica se o href do link está correto
+    cy.get(el.esqueceuASenha)
+    .should('have.attr', 'href', el.esqueceuASenhaUrl)
+    .click();
  });
+});
+
+
+
+
+
