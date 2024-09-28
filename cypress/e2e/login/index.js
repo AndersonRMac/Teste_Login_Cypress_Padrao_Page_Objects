@@ -1,5 +1,5 @@
-import { el, login } from "./elements";
-const { username, password } = login['Medico da Familia'];
+import { el, cr, login } from "./elements";
+
 
 
 
@@ -8,9 +8,13 @@ const LoginPage = {
     go: function() {
         cy.visit(el.urlInicial)
     },
+    fillEnfLogin: () => {
+        cy.get(el.login).type(cr.userVbEnf);
+        cy.get(el.password).type(cr.passVbEnf);
+    },
     fillFormPasswordError: ()=>{
     // Preenche o campo Login inválido
-    cy.get(el.login).type(username);
+    cy.get(el.login).type(cr.userMfMed);
     // Preenche o campo de Senha
     cy.get(el.password).type('Teste');
     },
@@ -18,24 +22,20 @@ const LoginPage = {
         // Preenche o campo Login inválido
         cy.get(el.login).type('Teste');
         // Preenche o campo de Senha
-        cy.get(el.password).type(password);
+        cy.get(el.password).type(cr.passMfMed);
     },
 
     fillForm: function (){
         // Preenche o campo de Login
-        cy.get(el.login).type(username);
+        cy.get(el.login).type(cr.userMfMed);
         // Preenche o campo de Senha
-        cy.get(el.password).type(password);
+        cy.get(el.password).type(cr.passMfMed);
     },
     submit: function(){
         //Clica em Entrar
         cy.get(el.btnEnter).click();
     },
     fillSuspenseWindow: function(){
-        //Selecionar o dropdown de agendas
-        //cy.get(el.dropdownAgendas).click();
-        // Selecione o dropdown de horários
-        //cy.get(el.dropdownHorarios).click();
         cy.wait(3000);
         //Clique no botão confirmar
         cy.get(el.btnConfirmar).contains('Confirmar').click();

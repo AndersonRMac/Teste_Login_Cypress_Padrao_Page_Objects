@@ -27,7 +27,7 @@ import LoginPage from "./index"
     cy.get(el.btnEnter).should('be.disabled');
   });
 
-  it('LOGIN SIGA - CT04 - Credenciais válidas', ()=>{
+  it('LOGIN SIGA - CT04 - Credenciais válidas de médico', ()=>{
     LoginPage.fillForm();
     LoginPage.submit();
     LoginPage.fillSuspenseWindow();
@@ -57,12 +57,13 @@ import LoginPage from "./index"
     .should('have.attr', 'href', el.esqueceuASenhaUrl)
     .click();
  });
- it('LOGIN SIGA - CT07 - Valida login médico"', () =>{
-  
-});
-it('LOGIN SIGA - CT08 - Valida login enfermeiro"', () =>{
-  
-});
+
+  it.only('LOGIN SIGA - CT07 - Valida login enfermeiro"', () =>{
+    LoginPage.fillEnfLogin();
+    LoginPage.submit();
+    LoginPage.fillSuspenseWindow();
+    //Fazer lógia de validação do enfermeiro
+  });
 });
 
 

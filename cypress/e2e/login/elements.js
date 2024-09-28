@@ -14,17 +14,12 @@ exports.el = {
     perguntasFrequentesUrl:'http://hapclin.hapvida-hml.com.br/faq'
 }
 
-export const login = {
-    "Medico da Familia":{
-        username:"DBGODOI",
-        password:"BERNARDI1"
-    },
-    "Viver Bem":{
-        username:"LUMABP",
-        password:"LUMA16490" 
-    },
-    "Sinta-se Bem":{
+exports.cr = {
 
-    }
-
+    userVbMed:'LUMABP',
+    passVbMed:'LUMA16490',
+    userVbEnf: 'TS42908',
+    passVbEnf:'SIAHT@496071',
+    userMfMed:'DBGODOI',
+    passMfMed:'BERNARDI1'
 }
