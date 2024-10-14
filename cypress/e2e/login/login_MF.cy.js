@@ -1,5 +1,5 @@
 ///<reference types = "Cypress"/>
-import { el } from "./elements";
+import { cr, el } from "./elements";
 import LoginPage from "./index"
 
 
@@ -10,14 +10,14 @@ import LoginPage from "./index"
   });
 
   it('LOGIN SIGA - CT01 - Credenciais de Login inválidas', () => {
-    LoginPage.fillFormLoginError();
+    LoginPage.fillLogin("teste", cr.passMfMed)
     LoginPage.submit();
     //Assert para validação
     cy.get('.error-title').should('be.visible');
   });
 
   it('LOGIN SIGA - CT02 - Senha inválida', () => {
-    LoginPage.fillFormPasswordError();
+    LoginPage.fillLogin(cr.passMfMed, "teste")
     LoginPage.submit();
     //Assert para validação
     cy.get('.error-title').should('be.visible');
@@ -28,9 +28,9 @@ import LoginPage from "./index"
   });
 
   it('LOGIN SIGA - CT04 - Credenciais válidas de médico', ()=>{
-    LoginPage.fillForm();
+    LoginPage.fillLogin(cr.userVbMed,cr.passVbMed)
     LoginPage.submit();
-    LoginPage.fillSuspenseWindow();
+    LoginPage.fillSuspenseWindowMedicoVB();
     cy.url().should('eq', el.urlLogada);    
 
   });
@@ -58,11 +58,13 @@ import LoginPage from "./index"
     .click();
  });
 
-  it.only('LOGIN SIGA - CT07 - Valida login enfermeiro"', () =>{
-    LoginPage.fillEnfLogin();
+  it('LOGIN SIGA - CT07 - Valida login "enfermeiro"', () =>{
+    LoginPage.fillLogin(cr.userVbEnf, cr.passVbEnf);
     LoginPage.submit();
-    LoginPage.fillSuspenseWindow();
+    LoginPage.fillSuspenseWindowEnfermeiroVB();
     //Fazer lógia de validação do enfermeiro
+    cy.get('[title*="ENFERMAGEM VIVER BEM"]').should('exist');
+
   });
 });
 
