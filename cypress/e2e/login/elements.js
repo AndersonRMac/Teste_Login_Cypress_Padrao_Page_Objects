@@ -21,5 +21,7 @@ exports.cr = {
     userVbEnf: 'TS42908',
     passVbEnf:'SIAHT@496071',
     userMfMed:'DBGODOI',
-    passMfMed:'BERNARDI1'
+    passMfMed:'BERNARDI1',
+    login_medicoSB: 'WILSONMB',
+    senh_medicoSB:'JCLACWAK@5'
 }

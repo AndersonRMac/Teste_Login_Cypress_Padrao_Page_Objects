@@ -1,16 +1,16 @@
-import { el, cr } from "../login/elements";
+import { el, cr} from "../login/elements";
 
-const FilaPage = {
+const ProntuarioSB_Page = {
     
     go: function () {
-        cy.visit(el.urlInicial);
+        cy.visit();
         FilaPage.fillLogin(cr.userVbMed,cr.passVbMed);
         FilaPage.submit();
         FilaPage.fillSuspenseWindowMedicoVB();
     },
-    fillLogin: function (_login, _pass) {
-        cy.get(el.login).type(_login);
-        cy.get(el.password).type(_pass);
+    fillLoginSB: function () {
+        cy.get(el.login).type(cr.login_medicoSB);
+        cy.get(el.password).type(cr.senh_medicoSB);
     },
     submit: function(){
         //Clica em Entrar
@@ -35,4 +35,4 @@ const FilaPage = {
     },
     
 }
-export default FilaPage;
+export default ProntuarioSB_Page;
