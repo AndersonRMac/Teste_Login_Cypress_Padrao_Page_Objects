@@ -1,9 +1,9 @@
-import { el, cr, login } from "../filaChamada/index";
+import { el } from "../login/elements";
 
 //AONDE DEIXO OS ESCRIPTS DE FUNÇÕES USADAS PARA TESTES
 const LoginPage = {
     go: function() {
-        cy.visit(el.urlInicial)
+        cy.visit(el.urlInicial);
     },
     fillLogin: function (_login, _pass) {
         cy.get(el.login).type(_login);
