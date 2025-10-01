@@ -1,6 +1,6 @@
 exports.el = {
     urlInicial2: 'http://10.1.17.32:8080',
-    urlInicial: 'http://hapclin.hapvida-hml.com.br',
+    urlSIGA: 'http://hapclin.hapvida-hml.com.br',
     login: '#username-input',
     password:'#password-input',
     btnEnter:'button[type="submit"]',
