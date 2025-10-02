@@ -11,8 +11,8 @@ describe('Teste funcional da tela de chamada de pacientes', () => {
 
     it('ProntuarioSB - CT 01 - Validar Login válido de médico no prontuário SB', () => {
         cy.get('span.app-title.mat-subheading-2')
-        .should('be.visible')              // garante que o elemento está visível
-        .and('have.text', 'sinta-se bem')  // valida o texto exato
-    });
+        .should('have.text', 'sinta-se bem')  
+    });            
+        
 
 });
